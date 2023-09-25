@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App - Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<header th:replace="~{fragments/headers.html :: not-logged-in-header}"></header>
+<main class="container">
+    <h3>Register</h3>
+    <section>
+        <form>
+            <div class="input-group m-2">
+                <label class="input-group-text">Username</label>
+                <input name="username" class="form-control" type="text"/>
+            </div>
+            <div class="input-group m-2">
+                <label class="input-group-text">Picture</label>
+                <input name="pictureUrl" class="form-control" type="url"/>
+            </div>
+            <div class="input-group m-2">
+                <label class="input-group-text">Location</label>
+                <input name="location" class="form-control" type="text"/>
+            </div>
+            <div class="input-group m-2">
+                <label class="input-group-text">Chat color</label>
+                <input name="chatColor" class="form-control" type="color"/>
+            </div>
+            <div class="input-group m-2">
+                <label class="input-group-text">Bio</label>
+                <textarea name="userBio" class="form-control"></textarea>
+            </div>
+            <div class="input-group m-2">
+                <label class="input-group-text">Password</label>
+                <input name="password" class="form-control" type="password"/>
+            </div>
+            <div class="m-2">
+                <button class="btn btn-dark text-white p-3">Sign up</button>
+            </div>
+        </form>
+    </section>
+</main>
+</body>
+</html>
