@@ -3,6 +3,8 @@ package com.chatapplication.users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class UserService {
     private UserRepository userRepository;
@@ -21,4 +23,9 @@ public class UserService {
         System.out.println(user);
         return user;
     }
+
+    public ArrayList<UserEntity> getAllUsers() {
+        return (ArrayList<UserEntity>) this.userRepository.findAll();
+    }
+
 }

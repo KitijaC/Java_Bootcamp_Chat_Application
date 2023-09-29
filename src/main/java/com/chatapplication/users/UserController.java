@@ -2,6 +2,7 @@ package com.chatapplication.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -45,4 +46,16 @@ public class UserController {
             return "redirect:/login?status=LOGIN_FAILED&error=" + exception.getMessage();
         }
     }
+
+    @GetMapping("/profiles")
+    public String displayProfilesPage(Model model) {
+        model.addAttribute("members", this.userService.getAllUsers());
+        return "profiles";
+    }
+
+//    @GetMapping("/profiles/{id}")
+//    public String displayProfile(Model model) {
+//        model.addAttribute("user", this.userService.getAllUsers());
+//        return "user-profile";
+//    }
 }

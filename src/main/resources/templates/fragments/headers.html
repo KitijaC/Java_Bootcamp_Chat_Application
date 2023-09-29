@@ -12,3 +12,12 @@
 <!--
 we can add another header here for logged in users
 -->
+
+<header th:fragment="logged-in-header"
+        class="container-fluid text-center bg-dark text-white">
+  <h1 class="p-2">Chat App</h1>
+  <nav class="m-3 p-2">
+    <a class="btn btn-light" href="/profiles">See Members</a>
+    <a class="btn btn-light" href="/logout">Log out</a>
+  </nav>
+</header>

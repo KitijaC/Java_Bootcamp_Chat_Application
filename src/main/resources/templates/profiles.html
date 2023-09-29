@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<header th:replace="~{fragments/headers.html :: logged-in-header}"></header>
+<main class="container">
+    <h3>Profiles</h3>
+    <section>
+        <div th:if="${members.isEmpty()}">No profiles to display</div>
+        <div th:if="${!members.isEmpty()}">
+            <ul>
+                <li th:each="member: ${members}" class="row">
+                    <div class="col">
+                        <img th:src="${member.getPictureUrl()}" style="width: 200px; height: auto">
+                    </div>
+                    <div class="col">
+                        <h4 th:text="${member.getUsername()}"></h4>
+                        <div th:text="${member.getUserBio()}"></div>
+                        <div th:text="'Lives in ' + ${member.getLocation()}"></div>
+                        <a th:href="${'/profiles/' + member.getId()}" class="btn btn-primary">See More Info</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+</body>
+</html>
