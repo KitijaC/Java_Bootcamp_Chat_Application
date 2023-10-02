@@ -28,4 +28,7 @@ public class UserService {
         return (ArrayList<UserEntity>) this.userRepository.findAll();
     }
 
+    public UserEntity getUserById(long userId) throws Exception {
+        return this.userRepository.findById(userId).orElseThrow();
+    }
 }
